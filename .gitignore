@@ -1,0 +1,85 @@
+###############################
+# Build / Saída de compilação
+###############################
+
+# Arquivos .class e crash logs da JVM
+*.class
+hs_err_pid*
+replay_pid*
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# (Wrappers do Maven/Gradle DEVEM ser versionados:
+#  mvnw, mvnw.cmd, gradlew, gradlew.bat, .mvn/, gradle/wrapper/)
+
+###############################
+# IntelliJ IDEA
+###############################
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+###############################
+# VS Code
+###############################
+.vscode/
+
+###############################
+# Eclipse
+###############################
+.project
+.classpath
+.settings/
+.metadata/
+bin/
+
+###############################
+# Eclipse STS / Spring Tools
+###############################
+.springBeans
+.sts4-cache/
+.apt_generated/
+.apt_generated_test/
+.factorypath
+
+###############################
+# NetBeans
+###############################
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+###############################
+# Logs
+###############################
+*.log
+logs/
+
+###############################
+# Arquivos de SO
+###############################
+.DS_Store
+Thumbs.db
+
+###############################
+# Extras úteis (opcional)
+###############################
+# Variáveis de ambiente com segredos
+.env
+*.env.local
