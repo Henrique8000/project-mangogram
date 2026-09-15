@@ -1,9 +1,11 @@
 package com.henriquedev.mangogram.dto;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.henriquedev.mangogram.domain.User;
 
 import java.io.Serializable;
 
+@JsonPropertyOrder({"id", "name", "email"})
 public class UserDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -28,14 +30,6 @@ public class UserDTO implements Serializable {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getName() {
         return name;
     }
@@ -44,4 +38,11 @@ public class UserDTO implements Serializable {
         this.name = name;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
