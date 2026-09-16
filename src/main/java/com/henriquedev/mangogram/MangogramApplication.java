@@ -9,4 +9,5 @@ public class MangogramApplication {
 	static void main(String[] args) {
 		SpringApplication.run(MangogramApplication.class, args);
 	}
+
 }

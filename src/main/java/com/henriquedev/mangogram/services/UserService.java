@@ -1,6 +1,7 @@
 package com.henriquedev.mangogram.services;
 
 import com.henriquedev.mangogram.domain.User;
+import com.henriquedev.mangogram.dto.UserDTO;
 import com.henriquedev.mangogram.repository.UserRepository;
 import com.henriquedev.mangogram.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,4 +25,11 @@ public class UserService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 
+    public User insert(User obj) {
+        return userRepository.insert(obj);
+    }
+
+    public User fromDTO(UserDTO objDto) {
+        return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
+    }
 }
