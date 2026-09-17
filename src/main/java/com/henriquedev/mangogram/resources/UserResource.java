@@ -24,7 +24,7 @@ public class UserResource {
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAllUsers() {
         List<User> listUsers = userService.findAll();
-        List<UserDTO> listDto = listUsers.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
+        List<UserDTO> listDto = listUsers.stream().map(UserDTO::new).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDto);
     }
 
@@ -40,6 +40,12 @@ public class UserResource {
         obj = userService.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUserById(@PathVariable String id) {
+        userService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
