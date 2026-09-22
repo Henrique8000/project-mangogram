@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,4 +46,11 @@ public class UserResource {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateUser(@RequestBody UserDTO objDto, @PathVariable String id) {
+        User obj = userService.fromDTO(objDto);
+        obj.setId(id);
+        userService.update(obj);
+        return ResponseEntity.noContent().build();
+    }
 }
